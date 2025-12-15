@@ -29,7 +29,7 @@ export default function ResizablePanels({ leftPanel, rightPanel, initialLeftWidt
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, []);
+  }, [handleMouseMove, handleMouseUp]);
 
   return (
     <Box sx={{ display: 'flex', flexGrow: 1, height: '100vh', overflow: 'hidden', ...sx }}>

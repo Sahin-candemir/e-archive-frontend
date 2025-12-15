@@ -1,11 +1,11 @@
 import './App.css';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import FileViewer from './components/FileViewer';
 import FileExplorer from './components/FileExplorer';
 import FileUploadPage from './components/FileUploadPage';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import axios from 'axios';
+
 import LoginComponent from './components/LoginComponent';
 import SignupComponent from './components/SignUpComponent';
 import { Box, Typography, Dialog, DialogTitle, DialogContent, IconButton } from '@mui/material';
@@ -17,7 +17,6 @@ import ResizablePanels from './components/ResizablePanel';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showUpload, setShowUpload] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
   const [selectedFolderId, setSelectedFolderId] = useState(null);

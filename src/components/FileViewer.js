@@ -36,7 +36,7 @@ export default function FileViewer({ fileName, content }) {
       }
       setPdfUrl(null);
     }
-  }, [fileName, content]);
+  }, [fileName, content, pdfUrl]);
 
   if (!content) return null;
 
