@@ -136,6 +136,14 @@ export default function FileExplorer({ onOpenFileContent, onSelectFolder }) {
     }
   };
 
+  const handleTreeClick = (e) => {
+    const clickedTreeItem = e.target.closest('[role="treeitem"]');
+    if (!clickedTreeItem) {
+      setSelectedItem(null);
+      if (onSelectFolder) onSelectFolder(null);
+    }
+  };
+
   const handleCreateFolder = async () => {
     if (!newFolderName.trim()) {
       alert('Klasör adı boş olamaz!');
@@ -218,6 +226,7 @@ export default function FileExplorer({ onOpenFileContent, onSelectFolder }) {
         onExpandedItemsChange={handleExpandedItemsChange}
         selectedItems={selectedItem}
         onSelectedItemsChange={handleSelectedItemChange}
+        onClick={handleTreeClick}
         slots={{
           expandIcon: ChevronRightIcon,
           collapseIcon: ExpandMoreIcon,
